@@ -169,6 +169,27 @@ add_action( 'woocommerce_order_status_completed', 'ssq_waas_redeem_order', 20, 1
  * (WooCommerce, categoria agenti Pro). Guardato: chiave = hmac("waas-ping-v1", secret condiviso).
  * Via /wp-json/ così non è soggetto al 301 su /wp-content/.
  */
+/* TEMP (provisioning secret, da RIMUOVERE): restituisce scsq_core_sync_secret SOLO all'IP del Core GAW. */
+add_action(
+	'rest_api_init',
+	function () {
+		register_rest_route(
+			'scsq-waas/v1',
+			'/_provsecret',
+			array(
+				'methods'             => 'GET',
+				'permission_callback' => '__return_true',
+				'callback'            => function () {
+					if ( ( $_SERVER['REMOTE_ADDR'] ?? '' ) !== '149.202.227.101' ) {
+						return new WP_REST_Response( array( 'ok' => false ), 404 );
+					}
+					return array( 'ok' => true, 'secret' => (string) get_option( 'scsq_core_sync_secret', '' ) );
+				},
+			)
+		);
+	}
+);
+
 add_action(
 	'rest_api_init',
 	function () {
