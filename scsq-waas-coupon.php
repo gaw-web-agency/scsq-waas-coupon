@@ -6,7 +6,7 @@
  *   se il Core non risponde o il coupon non è valido, non si applica nulla — il checkout non si
  *   rompe mai. Must-use: attivo senza attivazione manuale. Non interferisce con altri coupon/promo
  *   (per codici non-WAAS restituisce i dati invariati).
- * Version: 0.2.0
+ * Version: 0.2.1
  * Author: GAW Digital Solutions
  *
  * @package ScaleSquad\WaasCoupon
@@ -190,7 +190,7 @@ add_action(
 					return array(
 						'ok'              => true,
 						'mu_active'       => true,
-						'version'         => '0.2.0',
+						'version'         => '0.2.1',
 						'woocommerce'     => class_exists( 'WooCommerce' ),
 						'secret_set'      => '' !== $secret,
 						'cat_abbonamenti' => ( $cat && ! is_wp_error( $cat ) ) ? (int) $cat->term_id : null,
