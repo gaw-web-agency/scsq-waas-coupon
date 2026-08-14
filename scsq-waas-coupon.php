@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: ScaleSquad — Coupon WaaS (mu)
+ * Plugin Name: ScaleSquad Coupon WaaS (mu)
  * Description: Coupon riservato ai clienti WaaS (GAW). Al checkout valida WAAS-XXXXXXXX contro il
  *   Core e applica lo sconto agli agenti Pro (categoria "abbonamenti"). Uso singolo. Fail-safe:
- *   se il Core non risponde o il coupon non è valido, non si applica nulla — il checkout non si
+ *   se il Core non risponde o il coupon non è valido, non si applica nulla, il checkout non si
  *   rompe mai. Must-use: attivo senza attivazione manuale. Non interferisce con altri coupon/promo
  *   (per codici non-WAAS restituisce i dati invariati).
  * Version: 0.2.1
