@@ -1,0 +1,25 @@
+# Fine riga: nel repository si conserva sempre LF.
+#
+# I nostri server sono Linux, le postazioni sono Windows. Senza questa regola
+# basta un client configurato diversamente perche' un commit salvi CRLF: da quel
+# momento ogni file del progetto risulta "modificato" rispetto al server e
+# qualsiasi confronto di allineamento diventa illeggibile.
+* text=auto eol=lf
+
+# Binari: mai convertiti, mai diffati come testo.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
+*.eot  binary
+*.pdf  binary
+*.zip  binary
+*.mp4  binary
+*.webm binary
